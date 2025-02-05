@@ -1,13 +1,10 @@
 #include <stdio.h>
-#include <string.h>
-
+int getNthBit(int num, int n) {
+    return (num >> n) & 1;
+}
 int main() {
-    char s1[100], s2[100];
-
-    printf("Enter two strings: ");
-    fgets(s1, sizeof(s1), stdin); s1[strcspn(s1, "\n")] = 0;
-    fgets(s2, sizeof(s2), stdin); s2[strcspn(s2, "\n")] = 0;
-
-    printf("You entered: %s and %s\n", s1, s2);
+    int number, position;
+    scanf("%d %d", &number, &position);
+    printf("%d\n", getNthBit(number, position));
     return 0;
 }
