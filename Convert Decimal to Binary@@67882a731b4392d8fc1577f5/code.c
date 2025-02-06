@@ -1,9 +1,21 @@
 #include <stdio.h>
 
 void decimalToBinary(int n) {
+    if (n == 0) {
+        printf("0");
+        return;
+    }
+
+    int leadingZero = 1; 
+
     for (int i = 31; i >= 0; i--) {
         int bit = (n >> i) & 1;
-        if (bit == 1 || i < 31) {
+
+        if (bit == 1) {
+            leadingZero = 0; 
+        }
+
+        if (!leadingZero || bit == 1) { 
             printf("%d", bit);
         }
     }
@@ -11,10 +23,8 @@ void decimalToBinary(int n) {
 
 int main() {
     int num;
-    printf("Enter a number: ");
     scanf("%d", &num);
 
-   
     decimalToBinary(num);
     printf("\n");
 
