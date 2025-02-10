@@ -3,7 +3,7 @@
 int main() {
     char ch;
 
-    scanf(" %c", &ch); // Note the space before %c
+    scanf(" %c", &ch); 
 
     if (ch >= 'A' && ch <= 'Z') {
         printf("Uppercase\n");
