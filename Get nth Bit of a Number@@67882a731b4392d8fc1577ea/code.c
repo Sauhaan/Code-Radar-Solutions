@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 int main() {
-    int n, m;
+    int n, m, nthbit;
     scanf("%d %d", &n, &m);
     
-    int nthbit = (n >> m) & 1; 
+    nthbit = (n >> m) & 1; 
     
     printf("%d", nthbit);
     
