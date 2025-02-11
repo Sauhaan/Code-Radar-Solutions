@@ -1,13 +1,14 @@
 #include <stdio.h>
+#include <stdlib.h> // For exit()
 
 int main() {
     int num1, num2;
     char operator;
 
-    // Read the input (two integers and an operator)
-    if (scanf("%d %d %c", &num1, &num2, &operator)!= 3) {
-        printf("Invalid input. Please enter two integers followed by an operator (+, -, *, /).\n");
-        return 1; // Indicate an error
+    // Read input (two integers and an operator)
+    if (scanf("%d %d %c", &num1, &num2, &operator) != 3) {
+        fprintf(stderr, "Invalid input. Please enter two integers followed by an operator (+, -, *, /).\n");
+        exit(1); // Exit with error code
     }
 
     int result;
@@ -24,18 +25,18 @@ int main() {
             break;
         case '/':
             if (num2 == 0) {
-                printf("Error: Division by zero is not allowed.\n");
-                return 1; // Indicate an error
+                fprintf(stderr, "Error: Division by zero is not allowed.\n");
+                exit(1); // Exit with error code
             } else {
                 result = num1 / num2;
             }
             break;
         default:
-            printf("Error: Invalid operator. Please use +, -, *, or /.\n");
-            return 1; // Indicate an error
+            fprintf(stderr, "Error: Invalid operator. Please use +, -, *, or /.\n");
+            exit(1); // Exit with error code
     }
 
-    printf("%d\n", result); // Print the result
+    printf("%d\n", result);
 
-    return 0; // Indicate successful execution
+    return 0;
 }
