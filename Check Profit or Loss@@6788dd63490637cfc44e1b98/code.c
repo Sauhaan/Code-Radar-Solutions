@@ -1,15 +1,23 @@
 #include <stdio.h>
+
 int main() {
-int a,b;
-scanf("%d %d",&a,&b);
-if (a<b){
-        printf("Profit")
-}
-if (a>b){
-        printf("Loss")
-} 
-if (a==b){
-        printf("No profit No Loss")
-}
-    return 0;
+    int cost_price, selling_price;
+
+    scanf("%d %d", &cost_price, &selling_price);
+
+    if (cost_price <= 0 || selling_price <= 0) {
+        printf("Invalid input: Prices must be positive integers.\n");
+        return 1; 
+    }
+
+
+    if (selling_price > cost_price) {
+        printf("Profit\n");
+    } else if (selling_price < cost_price) {
+        printf("Loss\n");
+    } else {
+        printf("No Profit No Loss\n");
+    }
+
+    return 0; 
 }
