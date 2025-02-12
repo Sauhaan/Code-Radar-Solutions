@@ -4,22 +4,24 @@ int main() {
     int num1, num2;
     char op;
 
-    printf("Enter two integers followed by an operator (+, -, *, /): ");
+    // Input two integers and an operator
+    printf("Input: ");
     scanf("%d %d %c", &num1, &num2, &op);
 
+    // Perform the operation based on the operator
     switch (op) {
         case '+':
-            printf("Result: %d\n", num1 + num2);
+            printf("Output: %d\n", num1 + num2);
             break;
         case '-':
-            printf("Result: %d\n", num1 - num2);
+            printf("Output: %d\n", num1 - num2);
             break;
         case '*':
-            printf("Result: %d\n", num1 * num2);
+            printf("Output: %d\n", num1 * num2);
             break;
         case '/':
             if (num2 != 0) {
-                printf("Result: %d\n", num1 / num2);
+                printf("Output: %d\n", num1 / num2);
             } else {
                 printf("Error: Division by zero is not allowed.\n");
             }
