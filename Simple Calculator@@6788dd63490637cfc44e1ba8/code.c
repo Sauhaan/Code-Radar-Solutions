@@ -1,36 +1,53 @@
-#include <stdio.h>
+#include <stdio.h>  
 
-int main() {
-    int num1, num2;
-    char operator;
-    
-    // Taking input in the required format
-    if (scanf("%d%c%d", &num1, &operator, &num2) != 3) {
-        printf("Error: Invalid input\n");
-        return 1;
-    }
-    
-    // Performing the operation based on the operator
-    switch(operator) {
-        case '+':
-            printf("%d\n", num1 + num2);
-            break;
-        case '-':
-            printf("%d\n", num1 - num2);
-            break;
-        case '*':
-            printf("%d\n", num1 * num2);
-            break;
-        case '/':
-            if (num2 == 0) {
-                printf("Error: Division by zero\n");
-            } else {
-                printf("%d\n", num1 / num2);
-            }
-            break;
-        default:
-            printf("Error: Invalid operator\n");
-    }
-    
-    return 0;
+int main() {  
+    int num1, num2;  
+    char operator;  
+    float result;  
+
+    printf("Enter first integer: ");  
+    if (scanf("%d", &num1) != 1) {  
+        printf("error\n");  
+        return 1;   
+    }  
+
+    printf("Enter second integer: ");  
+    if (scanf("%d", &num2) != 1) {  
+        printf("error\n");  
+        return 1; 
+    }  
+
+    printf("Enter operator (+, -, *, /): ");  
+    if (scanf(" %c", &operator) != 1) {  
+        printf("error\n");  
+        return 1; 
+    }  
+
+    switch (operator) {  
+        case '+':  
+            result = num1 + num2;  
+            printf("Result: %.2f\n", result);  
+            break;  
+        case '-':  
+            result = num1 - num2;  
+            printf("Result: %.2f\n", result);  
+            break;  
+        case '*':  
+            result = num1 * num2;  
+            printf("Result: %.2f\n", result);  
+            break;  
+        case '/':  
+            if (num2 == 0) {  
+                printf("error\n");  
+            } else {  
+                result = (float)num1 / num2;  
+                printf("Result: %.2f\n", result);  
+            }  
+            break;  
+        default:  
+            printf("error\n");   
+            break;  
+    }  
+
+    return 0;  
 }
