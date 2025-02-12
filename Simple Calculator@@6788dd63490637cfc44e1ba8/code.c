@@ -1,53 +1,48 @@
-#include <stdio.h>  
+#include <stdio.h>
+#include <stdlib.h>
 
-int main() {  
-    int num1, num2;  
-    char operator;  
-    float result;  
+int main() {
+    int num1, num2;
+    char operator;
+    float result;
 
-    printf("Enter first integer: ");  
-    if (scanf("%d", &num1) != 1) {  
-        printf("error\n");  
-        return 1;   
-    }  
+    // Input: Get two numbers and an operator
+    printf("Enter two integers: ");
+    if (scanf("%d %d", &num1, &num2) != 2) {
+        fprintf(stderr, "Error: Invalid input for numbers.\n");
+        return 1; // Indicate an error
+    }
+    printf("Enter an operator (+, -, *, /): ");
+    if (scanf(" %c", &operator) != 1) {
+        fprintf(stderr, "Error: Invalid input for operator.\n");
+        return 1; // Indicate an error
+    }
 
-    printf("Enter second integer: ");  
-    if (scanf("%d", &num2) != 1) {  
-        printf("error\n");  
-        return 1; 
-    }  
+    // Perform calculation based on operator
+    switch (operator) {
+        case '+':
+            result = (float)num1 + num2;
+            break;
+        case '-':
+            result = (float)num1 - num2;
+            break;
+        case '*':
+            result = (float)num1 * num2;
+            break;
+        case '/':
+            if (num2 == 0) {
+                fprintf(stderr, "Error: Division by zero.\n");
+                return 1; // Indicate an error
+            }
+            result = (float)num1 / num2;
+            break;
+        default:
+            fprintf(stderr, "Error: Invalid operator.\n");
+            return 1; // Indicate an error
+    }
 
-    printf("Enter operator (+, -, *, /): ");  
-    if (scanf(" %c", &operator) != 1) {  
-        printf("error\n");  
-        return 1; 
-    }  
+    // Output the result
+    printf("Result: %.2f\n", result);
 
-    switch (operator) {  
-        case '+':  
-            result = num1 + num2;  
-            printf("Result: %.2f\n", result);  
-            break;  
-        case '-':  
-            result = num1 - num2;  
-            printf("Result: %.2f\n", result);  
-            break;  
-        case '*':  
-            result = num1 * num2;  
-            printf("Result: %.2f\n", result);  
-            break;  
-        case '/':  
-            if (num2 == 0) {  
-                printf("error\n");  
-            } else {  
-                result = (float)num1 / num2;  
-                printf("Result: %.2f\n", result);  
-            }  
-            break;  
-        default:  
-            printf("error\n");   
-            break;  
-    }  
-
-    return 0;  
+    return 0; // Indicate successful execution
 }
