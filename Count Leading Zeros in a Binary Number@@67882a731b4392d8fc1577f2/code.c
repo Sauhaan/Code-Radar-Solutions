@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <stdint.h> 
 
 int countLeadingZeros(uint32_t n) {
     if (n == 0) {
