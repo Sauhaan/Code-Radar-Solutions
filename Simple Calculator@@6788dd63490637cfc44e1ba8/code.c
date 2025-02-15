@@ -6,7 +6,7 @@ int main() {
     char operator;
 
     if (scanf("%d %d %c", &num1, &num2, &operator) != 3) {
-        printf("Error: Invalid input format.\n");
+        printf("error\n");
         return 1; 
     }
     switch (operator) {
