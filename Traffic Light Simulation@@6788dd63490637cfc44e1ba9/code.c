@@ -5,13 +5,13 @@ int main(){
 	scanf("%c ",&c);
 	switch(c){
 		case 'R':
-			printf("stop");
+			printf("Stop");
 			break;
 		case 'G':
 			printf("Go");
 			break;
 		case 'Y':
-			printf("slow down");
+			printf("Slow down");
 			break;
         default:
         printf("Invalid input");
