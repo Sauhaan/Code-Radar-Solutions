@@ -3,12 +3,12 @@
 int main() {
     int n;
 
-    printf("Enter the number of rows: "); // Prompt the user
+    printf(" "); 
     scanf("%d", &n);
 
     if (n <= 0) {
         printf("Number of rows must be positive.\n"); 
-        return 1; // Indicate an error
+        return 1;
     }
 
     for (int i = 0; i < n; i++) {
