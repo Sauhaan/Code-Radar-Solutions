@@ -5,13 +5,10 @@ int main() {
     int num1, num2;
     char operator;
 
-    // Read the input
     if (scanf("%d %d %c", &num1, &num2, &operator) != 3) {
         printf("Error: Invalid input format.\n");
-        return 1; // Indicate an error
+        return 1; 
     }
-
-    // Perform the calculation based on the operator
     switch (operator) {
         case '+':
             printf("%d\n", num1 + num2);
@@ -24,16 +21,16 @@ int main() {
             break;
         case '/':
             if (num2 == 0) {
-                printf("Error: Division by zero.\n");
-                return 1; // Indicate an error
+                printf("error\n");
+                return 1;
             } else {
                 printf("%d\n", num1 / num2);
             }
             break;
         default:
-            printf("Error: Invalid operator.\n");
-            return 1; // Indicate an error
+            printf("error\n");
+            return 1; 
     }
 
-    return 0; // Indicate successful execution
+    return 0; 
 }
