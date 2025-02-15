@@ -11,7 +11,7 @@ int main(){
 			printf("Go");
 			break;
 		case 'Y':
-			printf("Slow down");
+			printf("Slow Down");
 			break;
         default:
         printf("Invalid input");
