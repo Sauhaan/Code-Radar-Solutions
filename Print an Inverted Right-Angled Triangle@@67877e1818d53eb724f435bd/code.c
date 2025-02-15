@@ -7,7 +7,7 @@ int main() {
     scanf("%d", &n);
 
     if (n <= 0) {
-        printf("Number of rows must be positive.\n"); // Handle invalid input
+        printf("Number of rows must be positive.\n"); 
         return 1; // Indicate an error
     }
 
