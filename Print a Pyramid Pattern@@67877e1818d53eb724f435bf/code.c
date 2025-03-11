@@ -7,10 +7,10 @@ int main(){
 			printf(" ");
 		}
         for(k=1;k<=i;k++){
-            printf(" *");
+            printf("*");
         }
         for(l=i-1;l>=1;l--){
-            printf("*");
+            printf("* ");
         }printf("\n");
 	}
 	return 0;
